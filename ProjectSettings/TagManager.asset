@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Ground
+  - Finish
   - 
   - 
   - 
@@ -44,8 +44,11 @@ TagManager:
   - name: Background
     uniqueID: 2915094653
     locked: 0
-  - name: Platforms
+  - name: Ground
     uniqueID: 3648898965
+    locked: 0
+  - name: Finish
+    uniqueID: 856481977
     locked: 0
   - name: Player
     uniqueID: 2098523849
