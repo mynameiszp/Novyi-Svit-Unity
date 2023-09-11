@@ -10,7 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpLength = 3f;
     [SerializeField] float jumpHeigth = 5f;
 
-    private CapsuleCollider2D collider;
+    private CapsuleCollider2D bodyCollider;
+    private BoxCollider2D feetCollider;
     private Animator animator;
     private Rigidbody2D rigidbody;
     private float waitBeforeReload = 0.1f;
@@ -20,7 +21,8 @@ public class PlayerMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
-        collider = GetComponent<CapsuleCollider2D>();
+        bodyCollider = GetComponent<CapsuleCollider2D>();
+        feetCollider = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -33,7 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Fall()
     {
-        if (collider.IsTouchingLayers(LayerMask.GetMask("Bottom")))
+        if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Bottom")) 
+        || bodyCollider.IsTouchingLayers(LayerMask.GetMask("Bottom")))
         {
             animator.SetTrigger("hasFallen");
             isAlive = false;
@@ -44,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator OnJump(InputValue input)
     {
-        if (input.isPressed && collider.IsTouchingLayers(LayerMask.GetMask("Ground")) && isAlive)
+        if (input.isPressed && feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && isAlive)
         {
             animator.SetBool("isJumping", input.isPressed);
             rigidbody.velocity = new Vector2(jumpLength, jumpHeigth);

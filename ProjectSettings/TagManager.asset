@@ -14,8 +14,8 @@ TagManager:
   - Ground
   - Finish
   - Bottom
-  - 
-  - 
+  - Player
+  - Background
   - 
   - 
   - 
@@ -41,11 +41,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Bottom
-    uniqueID: 3833723627
-    locked: 0
   - name: Background
     uniqueID: 2915094653
+    locked: 0
+  - name: Bottom
+    uniqueID: 3833723627
     locked: 0
   - name: Ground
     uniqueID: 3648898965
