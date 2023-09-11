@@ -378,6 +378,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7276174631860661216, guid: ea8c03bb2f3f186409a1e909b2d3fe53, type: 3}
+      propertyPath: m_text
+      value: Restart
+      objectReference: {fileID: 0}
     - target: {fileID: 8859795295257349819, guid: ea8c03bb2f3f186409a1e909b2d3fe53, type: 3}
       propertyPath: m_Name
       value: MenuButton (1)
@@ -1053,6 +1057,10 @@ PrefabInstance:
     - target: {fileID: 3612081081862009836, guid: ea8c03bb2f3f186409a1e909b2d3fe53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276174631860661216, guid: ea8c03bb2f3f186409a1e909b2d3fe53, type: 3}
+      propertyPath: m_text
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 8859795295257349819, guid: ea8c03bb2f3f186409a1e909b2d3fe53, type: 3}
       propertyPath: m_Name
