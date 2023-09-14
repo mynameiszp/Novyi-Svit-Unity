@@ -384,7 +384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8859795295257349819, guid: ea8c03bb2f3f186409a1e909b2d3fe53, type: 3}
       propertyPath: m_Name
-      value: MenuButton (1)
+      value: MainMenuButton (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -721,7 +721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8859795295257349819, guid: ea8c03bb2f3f186409a1e909b2d3fe53, type: 3}
       propertyPath: m_Name
-      value: MenuButton (2)
+      value: MainMenuButton (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1064,7 +1064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8859795295257349819, guid: ea8c03bb2f3f186409a1e909b2d3fe53, type: 3}
       propertyPath: m_Name
-      value: MenuButton
+      value: MainMenuButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
