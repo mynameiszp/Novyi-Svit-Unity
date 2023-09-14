@@ -7,8 +7,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float jumpLength = 3f;
-    [SerializeField] float jumpHeigth = 5f;
+    [SerializeField] float jumpLength = 15f;
+    [SerializeField] float jumpHeigth = 18f;
 
     private CapsuleCollider2D bodyCollider;
     private BoxCollider2D feetCollider;
