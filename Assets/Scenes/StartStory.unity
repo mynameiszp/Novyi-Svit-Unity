@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 753917201}
   - component: {fileID: 753917200}
   - component: {fileID: 753917203}
-  - component: {fileID: 753917205}
   - component: {fileID: 753917206}
   m_Layer: 6
   m_Name: GroundTilemap
@@ -959,24 +958,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!252 &753917205
-SurfaceEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753917198}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Speed: 2
-  m_SpeedVariation: 0
-  m_ForceScale: 0.1
-  m_UseContactForce: 0
-  m_UseFriction: 1
-  m_UseBounce: 1
 --- !u!61 &753917206
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1007,7 +988,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 17.976362, y: -4.056989}
   m_SpriteTilingProperty:
@@ -1261,7 +1242,7 @@ Transform:
   m_GameObject: {fileID: 1558075915}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.74, y: 1.26, z: 0}
+  m_LocalPosition: {x: 3.74, y: 0.54, z: 0}
   m_LocalScale: {x: 0.8163988, y: 0.8163988, z: 0.8163988}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1478,6 +1459,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (Otter)
       objectReference: {fileID: 0}
+    - target: {fileID: 1722174661592249979, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d0510e89f7dd628469ed7c2522c45b0c, type: 2}
+    - target: {fileID: 3249777488345975488, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
+      propertyPath: m_Actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: dce04505d765e3146b2975083c6b55ce, type: 3}
     - target: {fileID: 4224654672109206274, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.7

@@ -7,15 +7,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerStoryMovements : MonoBehaviour
 {
-    [SerializeField] float jumpLength = 15f;
-    [SerializeField] float jumpHeigth = 18f;
+    [SerializeField] float runSpeed = 10f;
 
     private CapsuleCollider2D bodyCollider;
     private BoxCollider2D feetCollider;
     private Animator animator;
     private Rigidbody2D rigidbody;
-    private float waitBeforeReload = 0.1f;
-    private bool isAlive = true;
+    private Vector2 moveInput;
 
     void Start()
     {
@@ -27,36 +25,29 @@ public class PlayerStoryMovements : MonoBehaviour
 
     void Update()
     {
-        if (isAlive)
-        {
-            StartCoroutine(Fall());
-        }
+        Run();
+        FlipPlayer();
     }
 
-    IEnumerator Fall()
+
+    void OnMove(InputValue input)
     {
-        if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Bottom"))
-        || bodyCollider.IsTouchingLayers(LayerMask.GetMask("Bottom")))
-        {
-            animator.SetTrigger("hasFallen");
-            isAlive = false;
-            yield return new WaitForSecondsRealtime(waitBeforeReload);
-            FindObjectOfType<GameSession>().ProcessPlayerDeath();
-        }
+        moveInput = input.Get<Vector2>();
     }
 
-    IEnumerator OnJump(InputValue input)
+    void Run()
     {
-        if (input.isPressed && feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && isAlive)
-        {
-            animator.SetBool("isJumping", input.isPressed);
-            rigidbody.velocity = new Vector2(jumpLength, jumpHeigth);
-            yield return new WaitForSecondsRealtime(animator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
-            animator.SetBool("isJumping", false);
-        }
+        transform.Translate(moveInput * runSpeed * Time.deltaTime);
+        bool isMoving = Mathf.Abs(moveInput.x) > 0;
+        animator.SetBool("isRunning", isMoving);
     }
 
-    // IEnumerator OnMove(InputValue input){
-
-    // }
+    void FlipPlayer()
+    {
+        bool isMoving = Mathf.Abs(moveInput.x) > 0;
+        if (isMoving)
+        {
+            transform.localScale = new Vector2(Mathf.Sign(moveInput.x), 1f);
+        }
+    }
 }

@@ -47,9 +47,9 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator OnJump(InputValue input)
     {
-        if (input.isPressed && feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && isAlive)
+        if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && isAlive)
         {
-            animator.SetBool("isJumping", input.isPressed);
+            animator.SetBool("isJumping", true);
             rigidbody.velocity = new Vector2(jumpLength, jumpHeigth);
             yield return new WaitForSecondsRealtime(animator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
             animator.SetBool("isJumping", false);
