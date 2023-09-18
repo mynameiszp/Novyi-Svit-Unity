@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Drawing;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class PlayerStoryMovements : MonoBehaviour
 {
@@ -37,6 +38,8 @@ public class PlayerStoryMovements : MonoBehaviour
     private Rect rec;
     private Texture2D avatarTexture;
     private float opponentAvatarPosition;
+    private GameObject doors;
+    private GameObject mainCharacters;
 
 
     IEnumerator Start()
@@ -45,12 +48,15 @@ public class PlayerStoryMovements : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feetCollider = GetComponent<BoxCollider2D>();
+        doors = GameObject.FindWithTag("Exit");
+        mainCharacters = GameObject.FindWithTag("MainCharacters");
         opponentAvatarPosition = opponentAvatar.transform.localPosition.x;
         dialogCanvas.SetActive(false);
         instructionCanvas.SetActive(false);
         yield return dataLoader;
         dataLoader = GameObject.FindWithTag("Player").GetComponent<DataLoader>();
-        yield return dataLoader;
+        yield return dataLoader;       
+        doors.SetActive(false);
         linesNumInScene = dataLoader.GetLinesNumberInScene("StartStory");
         speakersInScene = dataLoader.GetSpeakersInScene("StartStory");
     }
@@ -69,6 +75,8 @@ public class PlayerStoryMovements : MonoBehaviour
             dialogCanvas.SetActive(false);
             canMove = true;
             animator.speed = 1f;
+            doors.SetActive(true);
+            mainCharacters.SetActive(false);
         }
         if (isInStoryMode && linesDisplayed < linesNumInScene)
         {
@@ -80,10 +88,18 @@ public class PlayerStoryMovements : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        isInStoryMode = true;
-        canMove = false;
-        animator.speed = 0f;
-        instructionCanvas.SetActive(true);
+        if (other.tag == "Brother")
+        {
+            isInStoryMode = true;
+            canMove = false;
+            animator.speed = 0f;
+            instructionCanvas.SetActive(true);
+        }
+        if (other.tag == "Exit")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
     }
 
     private void PlayText()

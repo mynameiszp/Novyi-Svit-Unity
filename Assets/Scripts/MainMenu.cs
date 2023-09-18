@@ -11,11 +11,10 @@ public class MainMenu : MonoBehaviour
 
     public void OnRestart()
     {
-        //SceneManager.LoadScene(add number of first scene); 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
     }
 
     public void OnSettings() { 
 
     }
-    
 }

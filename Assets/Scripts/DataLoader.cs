@@ -12,8 +12,6 @@ public class DataLoader : MonoBehaviour
         yield return linesData;
         string linesDataString = linesData.text.Remove(linesData.text.Length - 1);
         linesRows = linesDataString.Split(';');
-        //Debug.Log("Started");
-        //Debug.Log(GetLinesNumberInScene("StartStory"));
     }
 
     private string GetDataValue(int row, string index)

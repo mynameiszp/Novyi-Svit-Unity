@@ -9,6 +9,8 @@ TagManager:
   - Aunty
   - Brother
   - Oshi
+  - Exit
+  - MainCharacters
   layers:
   - Default
   - TransparentFX
