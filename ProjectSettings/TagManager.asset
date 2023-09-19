@@ -11,6 +11,7 @@ TagManager:
   - Oshi
   - Exit
   - MainCharacters
+  - FollowCamera
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,7 @@ using UnityEngine.UI;
 using System.Drawing;
 using System.IO;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class PlayerStoryMovements : MonoBehaviour
 {
@@ -40,7 +41,9 @@ public class PlayerStoryMovements : MonoBehaviour
     private float opponentAvatarPosition;
     private GameObject doors;
     private GameObject mainCharacters;
-
+    private GameObject followCamera;
+    private LensSettings defaultFollowCameraLens;
+    private Vector3 defaultFollowCameraOffset;
 
     IEnumerator Start()
     {
@@ -50,12 +53,15 @@ public class PlayerStoryMovements : MonoBehaviour
         feetCollider = GetComponent<BoxCollider2D>();
         doors = GameObject.FindWithTag("Exit");
         mainCharacters = GameObject.FindWithTag("MainCharacters");
+        followCamera = GameObject.FindWithTag("FollowCamera");
+        defaultFollowCameraLens = followCamera.GetComponent<CinemachineVirtualCamera>().m_Lens;
+        defaultFollowCameraOffset = followCamera.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset;
         opponentAvatarPosition = opponentAvatar.transform.localPosition.x;
         dialogCanvas.SetActive(false);
         instructionCanvas.SetActive(false);
         yield return dataLoader;
         dataLoader = GameObject.FindWithTag("Player").GetComponent<DataLoader>();
-        yield return dataLoader;       
+        yield return dataLoader;
         doors.SetActive(false);
         linesNumInScene = dataLoader.GetLinesNumberInScene("StartStory");
         speakersInScene = dataLoader.GetSpeakersInScene("StartStory");
@@ -77,6 +83,8 @@ public class PlayerStoryMovements : MonoBehaviour
             animator.speed = 1f;
             doors.SetActive(true);
             mainCharacters.SetActive(false);
+            followCamera.GetComponent<CinemachineVirtualCamera>().m_Lens = defaultFollowCameraLens;
+            followCamera.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = defaultFollowCameraOffset;
         }
         if (isInStoryMode && linesDisplayed < linesNumInScene)
         {
@@ -88,12 +96,14 @@ public class PlayerStoryMovements : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Brother")
+        if (other.tag == "MainCharacters")
         {
             isInStoryMode = true;
             canMove = false;
             animator.speed = 0f;
             instructionCanvas.SetActive(true);
+            followCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 4;
+            followCamera.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = new Vector2(3.4f, -0.3f);
         }
         if (other.tag == "Exit")
         {
