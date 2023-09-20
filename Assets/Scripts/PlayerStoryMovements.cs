@@ -1,12 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using System.Drawing;
 using System.IO;
 using UnityEngine.SceneManagement;
 using Cinemachine;
@@ -77,20 +74,16 @@ public class PlayerStoryMovements : MonoBehaviour
     {
         if (linesDisplayed >= linesNumInScene)
         {
-            isInStoryMode = false;
+            ExitStoryMode();
             dialogCanvas.SetActive(false);
-            canMove = true;
-            animator.speed = 1f;
             doors.SetActive(true);
             mainCharacters.SetActive(false);
-            followCamera.GetComponent<CinemachineVirtualCamera>().m_Lens = defaultFollowCameraLens;
-            followCamera.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = defaultFollowCameraOffset;
         }
         if (isInStoryMode && linesDisplayed < linesNumInScene)
         {
             instructionCanvas.SetActive(false);
             dialogCanvas.SetActive(true);
-            PlayText();
+            PlayDialog();
         }
     }
 
@@ -98,44 +91,47 @@ public class PlayerStoryMovements : MonoBehaviour
     {
         if (other.tag == "MainCharacters")
         {
-            isInStoryMode = true;
-            canMove = false;
-            animator.speed = 0f;
+            EnterStoryMode();
             instructionCanvas.SetActive(true);
-            followCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 4;
-            followCamera.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = new Vector2(3.4f, -0.3f);
         }
         if (other.tag == "Exit")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-
     }
 
-    private void PlayText()
+    private void EnterStoryMode()
+    {
+        isInStoryMode = true;
+        canMove = false;
+        animator.speed = 0f;
+        followCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 4;
+        followCamera.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = new Vector2(3.4f, -0.3f);
+    }
+
+    private void ExitStoryMode()
+    {
+        isInStoryMode = false;
+        canMove = true;
+        animator.speed = 1f;
+        followCamera.GetComponent<CinemachineVirtualCamera>().m_Lens = defaultFollowCameraLens;
+        followCamera.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = defaultFollowCameraOffset;
+    }
+
+    private void PlayDialog()
     {
         avatarTexture = LoadPNG(dataLoader.GetSpeakerAvatarLink(linesDisplayed));
         rec = new Rect(0, 0, avatarTexture.width, avatarTexture.height);
         if (dataLoader.GetCurrentSpeaker(linesDisplayed) == "Player")
         {
-            playerText.gameObject.SetActive(true);
-            playerAvatar.gameObject.SetActive(true);
-            playerName.gameObject.SetActive(true);
-            opponentName.gameObject.SetActive(false);
-            opponentText.gameObject.SetActive(false);
-            opponentAvatar.gameObject.SetActive(false);
+            SetPlayerDialogPanel();
             playerText.text = dataLoader.GetSpeakerText(linesDisplayed);
             playerName.text = "Player";
             playerAvatar.GetComponent<Image>().sprite = Sprite.Create(avatarTexture, rec, new Vector2(0, 0));
         }
         else
         {
-            playerText.gameObject.SetActive(false);
-            playerAvatar.gameObject.SetActive(false);
-            playerName.gameObject.SetActive(false);
-            opponentName.gameObject.SetActive(true);
-            opponentText.gameObject.SetActive(true);
-            opponentAvatar.gameObject.SetActive(true);
+            SetOpponentDialogPanel();
             opponentText.text = dataLoader.GetSpeakerText(linesDisplayed);
             opponentName.text = dataLoader.GetCurrentSpeaker(linesDisplayed);
             opponentAvatar.GetComponent<Image>().sprite = Sprite.Create(avatarTexture, rec, new Vector2(0, 0));
@@ -143,6 +139,26 @@ public class PlayerStoryMovements : MonoBehaviour
             opponentAvatar.transform.localPosition = new Vector2(opponentAvatarPosition - avatarTexture.width, opponentAvatar.transform.localPosition.y);
         }
         linesDisplayed++;
+    }
+
+    private void SetPlayerDialogPanel()
+    {
+        playerText.gameObject.SetActive(true);
+        playerAvatar.gameObject.SetActive(true);
+        playerName.gameObject.SetActive(true);
+        opponentName.gameObject.SetActive(false);
+        opponentText.gameObject.SetActive(false);
+        opponentAvatar.gameObject.SetActive(false);
+    }
+
+    private void SetOpponentDialogPanel()
+    {
+        playerText.gameObject.SetActive(false);
+        playerAvatar.gameObject.SetActive(false);
+        playerName.gameObject.SetActive(false);
+        opponentName.gameObject.SetActive(true);
+        opponentText.gameObject.SetActive(true);
+        opponentAvatar.gameObject.SetActive(true);
     }
 
     public Texture2D LoadPNG(string filePath)
