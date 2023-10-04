@@ -94,10 +94,10 @@ public class PlayerStoryMovements : MonoBehaviour
             EnterStoryMode();
             instructionCanvas.SetActive(true);
         }
-        if (other.tag == "Exit")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        // if (other.tag == "Exit")
+        // {
+        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // }
     }
 
     private void EnterStoryMode()
