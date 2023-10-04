@@ -31,7 +31,7 @@ public class PauseMenu : MonoBehaviour
 
     public void OnMainMenu()
     {
-        //save current position and data
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 }

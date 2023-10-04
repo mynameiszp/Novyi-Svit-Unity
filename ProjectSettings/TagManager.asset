@@ -12,6 +12,7 @@ TagManager:
   - Exit
   - MainCharacters
   - FollowCamera
+  - SaveTrigger
   layers:
   - Default
   - TransparentFX
