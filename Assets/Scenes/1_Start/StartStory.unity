@@ -11596,9 +11596,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 586689995}
     - target: {fileID: 5109641462666465049, guid: 2cf9fece3c0a2c140bf7db674a1ef171, type: 3}
+      propertyPath: cameraOffset.x
+      value: 3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109641462666465049, guid: 2cf9fece3c0a2c140bf7db674a1ef171, type: 3}
+      propertyPath: cameraOffset.y
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109641462666465049, guid: 2cf9fece3c0a2c140bf7db674a1ef171, type: 3}
       propertyPath: opponentAvatar
       value: 
       objectReference: {fileID: 586689995}
+    - target: {fileID: 5109641462666465049, guid: 2cf9fece3c0a2c140bf7db674a1ef171, type: 3}
+      propertyPath: cameraLensInStory
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5109641462666465049, guid: 2cf9fece3c0a2c140bf7db674a1ef171, type: 3}
       propertyPath: instructionCanvas
       value: 

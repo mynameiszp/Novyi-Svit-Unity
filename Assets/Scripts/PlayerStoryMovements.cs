@@ -21,6 +21,9 @@ public class PlayerStoryMovements : MonoBehaviour
     [SerializeField] TextMeshProUGUI opponentName;
     [SerializeField] Image playerAvatar;
     [SerializeField] Image opponentAvatar;
+    [Header("Camera")]
+    [SerializeField] Vector2 cameraOffset;
+    [SerializeField] float cameraLensInStory;
 
     private CapsuleCollider2D bodyCollider;
     private BoxCollider2D feetCollider;
@@ -42,9 +45,11 @@ public class PlayerStoryMovements : MonoBehaviour
     private LensSettings defaultFollowCameraLens;
     private Vector3 defaultFollowCameraOffset;
     private string currentScene;
+    private Vector3 initialScale;
 
     IEnumerator Start()
     {
+        initialScale = transform.localScale;
         currentScene = SceneManager.GetActiveScene().name;
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
@@ -104,8 +109,8 @@ public class PlayerStoryMovements : MonoBehaviour
         isInStoryMode = true;
         canMove = false;
         animator.speed = 0f;
-        followCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 4;
-        followCamera.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = new Vector2(3.4f, -0.3f);
+        followCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = cameraLensInStory;
+        followCamera.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = cameraOffset;
     }
 
     private void ExitStoryMode()
@@ -196,7 +201,7 @@ public class PlayerStoryMovements : MonoBehaviour
             bool isMoving = Mathf.Abs(moveInput.x) > 0;
             if (isMoving)
             {
-                transform.localScale = new Vector2(Mathf.Sign(moveInput.x), 1f);
+                transform.localScale = new Vector2(Mathf.Sign(moveInput.x) * initialScale.x, initialScale.y);
             }
         }
     }
