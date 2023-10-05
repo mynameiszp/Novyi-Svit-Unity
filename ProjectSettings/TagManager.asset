@@ -13,6 +13,7 @@ TagManager:
   - MainCharacters
   - FollowCamera
   - SaveTrigger
+  - Parrot
   layers:
   - Default
   - TransparentFX

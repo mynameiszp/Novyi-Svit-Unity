@@ -1050,7 +1050,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1379872643
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.5, y: 0.5, z: 0}
@@ -11629,79 +11629,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linesRows: []
---- !u!1001 &3888521513026995601
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 589953637845310710, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
-      propertyPath: m_Name
-      value: Player (Otter)
-      objectReference: {fileID: 0}
-    - target: {fileID: 589953637845310710, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722174661592249979, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d0510e89f7dd628469ed7c2522c45b0c, type: 2}
-    - target: {fileID: 3249777488345975488, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
-      propertyPath: m_Actions
-      value: 
-      objectReference: {fileID: -944628639613478452, guid: dce04505d765e3146b2975083c6b55ce, type: 3}
-    - target: {fileID: 4224654672109206274, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224654672109206274, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224654672109206274, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224654672109206274, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224654672109206274, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224654672109206274, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224654672109206274, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224654672109206274, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224654672109206274, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224654672109206274, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8243415017995666270, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 738ddc921c913164589c0dbb6af0cf55, type: 3}
 --- !u!1001 &6313181065467149046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11769,7 +11696,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 756743569}
   - {fileID: 1535102061}
-  - {fileID: 3888521513026995601}
   - {fileID: 411097875008685939}
   - {fileID: 437202482}
   - {fileID: 227455478}

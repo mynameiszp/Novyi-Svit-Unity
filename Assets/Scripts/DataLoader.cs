@@ -65,4 +65,17 @@ public class DataLoader : MonoBehaviour
     {
         return GetDataValue(row, "Avatar_link:");
     }
+
+    public int GetStartLineNumber(string sceneName){
+        int number = 0;
+        for (int row = 0; row < linesRows.Length; row++)
+        {
+            if (linesRows[row].Contains(sceneName))
+            {
+                number = row;
+                break;
+            }
+        }
+        return number;
+    }
 }

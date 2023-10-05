@@ -31,7 +31,7 @@ public class PlayerStoryMovements : MonoBehaviour
     private bool canMove = true;
     private bool isInStoryMode = false;
     private int linesNumInScene;
-    private int linesDisplayed = 0;
+    private int linesDisplayed;
     private List<string> speakersInScene;
     private Rect rec;
     private Texture2D avatarTexture;
@@ -41,9 +41,11 @@ public class PlayerStoryMovements : MonoBehaviour
     private GameObject followCamera;
     private LensSettings defaultFollowCameraLens;
     private Vector3 defaultFollowCameraOffset;
+    private string currentScene;
 
     IEnumerator Start()
     {
+        currentScene = SceneManager.GetActiveScene().name;
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
         bodyCollider = GetComponent<CapsuleCollider2D>();
@@ -60,8 +62,9 @@ public class PlayerStoryMovements : MonoBehaviour
         dataLoader = GameObject.FindWithTag("Player").GetComponent<DataLoader>();
         yield return dataLoader;
         doors.SetActive(false);
-        linesNumInScene = dataLoader.GetLinesNumberInScene("StartStory");
-        speakersInScene = dataLoader.GetSpeakersInScene("StartStory");
+        linesDisplayed = dataLoader.GetStartLineNumber(currentScene);
+        linesNumInScene = dataLoader.GetLinesNumberInScene(currentScene) + linesDisplayed;
+        speakersInScene = dataLoader.GetSpeakersInScene(currentScene);
     }
 
     void Update()
@@ -94,10 +97,6 @@ public class PlayerStoryMovements : MonoBehaviour
             EnterStoryMode();
             instructionCanvas.SetActive(true);
         }
-        // if (other.tag == "Exit")
-        // {
-        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        // }
     }
 
     private void EnterStoryMode()
