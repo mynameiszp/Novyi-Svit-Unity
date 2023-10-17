@@ -15,16 +15,16 @@ EditorBuildSettings:
     path: Assets/Scenes/1_Start/StartPlatformer.unity
     guid: de5faca6247596342829898eae5282a2
   - enabled: 1
-    path: Assets/Scenes/SeaStory.unity
+    path: Assets/Scenes/2_Sea/SeaStory.unity
     guid: 099205642fc607f4c9957422e522f865
   - enabled: 1
-    path: Assets/Scenes/SeaStory2.unity
+    path: Assets/Scenes/2_Sea/SeaStory2.unity
     guid: d9e7916c2dfefe94798cab6553418602
   - enabled: 1
-    path: Assets/Scenes/SeaHiddenObjs.unity
+    path: Assets/Scenes/2_Sea/SeaHiddenObjs.unity
     guid: 1ecb1c02f757fab48aa4c922ade1e5b9
   - enabled: 1
-    path: Assets/Scenes/SeaPlatformer.unity
+    path: Assets/Scenes/2_Sea/SeaPlatformer.unity
     guid: f1891b0dba164a4458bad4ab740d9b0e
   - enabled: 1
     path: Assets/Scenes/Platformer.unity

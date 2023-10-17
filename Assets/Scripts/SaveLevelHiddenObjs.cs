@@ -13,7 +13,6 @@ public class SaveLevelHiddenObjs : MonoBehaviour
             string activeScene = SceneManager.GetActiveScene().name;
             PlayerPrefs.SetString("SavedLevel", activeScene);
             gameObject.SetActive(false);
-            UnityEngine.Debug.Log(PlayerPrefs.GetString("SavedLevel"));
         }
     }
 }
