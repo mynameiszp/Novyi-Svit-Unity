@@ -29,5 +29,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Platformer.unity
     guid: 374044485e6d09142a69eabf4ac1cb5d
+  - enabled: 1
+    path: Assets/Scenes/IslandStory.unity
+    guid: f8714ade5bcc4bf40a3b73c7f600817b
+  - enabled: 1
+    path: Assets/Scenes/IslandHiddenObjs.unity
+    guid: d5b3ca6a2c5626f4082f8f85d51c3a0a
+  - enabled: 1
+    path: Assets/Scenes/IslandStory2.unity
+    guid: b9c8e68d4305a9c408e7a26d0d5fe317
+  - enabled: 1
+    path: Assets/Scenes/IslandPlatformer.unity
+    guid: 22be1286068b6a0449cdfc07d96f7844
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 579e8e86042185a4187483d683f809a8, type: 2}
