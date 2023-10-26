@@ -6750,39 +6750,39 @@ CompositeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.2}
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
   - m_Collider: {fileID: 753917205}
     m_ColliderPaths:
-    - - X: 520322560
-        Y: -59677420
-      - X: 200322576
-        Y: -59677420
-      - X: 200322576
-        Y: -39677420
-      - X: 160322576
-        Y: -39677420
-      - X: 160322576
-        Y: -19677420
-      - X: -120322584
-        Y: -19677420
-      - X: -120322584
-        Y: -100322584
-      - X: 520322560
-        Y: -100322584
+    - - X: 527777792
+        Y: -52222224
+      - X: 207777792
+        Y: -52222224
+      - X: 207777792
+        Y: -32222224
+      - X: 167777792
+        Y: -32222224
+      - X: 167777792
+        Y: -12222222
+      - X: -127777776
+        Y: -12222222
+      - X: -127777776
+        Y: -107777776
+      - X: 527777792
+        Y: -107777776
   m_CompositePaths:
     m_Paths:
-    - - {x: 52.032227, y: -10.032259}
-      - {x: 52.032227, y: -5.967742}
-      - {x: 20.032257, y: -5.967713}
-      - {x: 20.032228, y: -3.967742}
-      - {x: 16.032257, y: -3.9677129}
-      - {x: 16.032228, y: -1.967742}
-      - {x: -12.032259, y: -1.9677712}
-      - {x: -12.032228, y: -10.032259}
+    - - {x: 52.777752, y: -10.9777775}
+      - {x: 52.777752, y: -5.422222}
+      - {x: 20.777779, y: -5.4221926}
+      - {x: 20.77775, y: -3.4222224}
+      - {x: 16.777779, y: -3.422193}
+      - {x: 16.77775, y: -1.4222223}
+      - {x: -12.777778, y: -1.4222516}
+      - {x: -12.777748, y: -10.9777775}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -7909,7 +7909,7 @@ Transform:
   m_GameObject: {fileID: 1600742121}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8704821, y: 2.3771, z: -10}
+  m_LocalPosition: {x: 0.8711213, y: 2.5370898, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8297,7 +8297,7 @@ Transform:
   m_GameObject: {fileID: 1902371747}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.37, y: 2.38, z: -10}
+  m_LocalPosition: {x: -1.37, y: 2.54, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9783,7 +9783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4782341151216745175, guid: 2cf9fece3c0a2c140bf7db674a1ef171, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.38
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 4782341151216745175, guid: 2cf9fece3c0a2c140bf7db674a1ef171, type: 3}
       propertyPath: m_LocalPosition.z

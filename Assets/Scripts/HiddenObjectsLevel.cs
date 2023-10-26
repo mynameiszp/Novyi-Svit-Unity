@@ -14,6 +14,7 @@ public class HiddenObjectsLevel : MonoBehaviour
 
     private int founded = 0;
     private int objectsToFindNumber;
+    private string taskText;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class HiddenObjectsLevel : MonoBehaviour
 
     private void Start()
     {
+        taskText = task1.text.Trim();
         objectsToFindNumber = hiddenObjectsList.Count;
         doors = GameObject.FindWithTag("Exit");
         doors.SetActive(false);
@@ -30,7 +32,7 @@ public class HiddenObjectsLevel : MonoBehaviour
 
     private void Update()
     {
-        task1.text = string.Format("- Beads: {0}/{1}", founded, objectsToFindNumber);
+        task1.text = taskText + string.Format(" {0}/{1}", founded, objectsToFindNumber);
         FindObjs();
         ExitAppear();
     }
