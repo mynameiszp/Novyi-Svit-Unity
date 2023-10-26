@@ -49,12 +49,12 @@ public class PlayerStoryMovements : MonoBehaviour
 
     IEnumerator Start()
     {
+        feetCollider = GetComponent<BoxCollider2D>();
         initialScale = transform.localScale;
         currentScene = SceneManager.GetActiveScene().name;
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
         bodyCollider = GetComponent<CapsuleCollider2D>();
-        feetCollider = GetComponent<BoxCollider2D>();
         doors = GameObject.FindWithTag("Exit");
         mainCharacters = GameObject.FindWithTag("MainCharacters");
         followCamera = GameObject.FindWithTag("FollowCamera");
@@ -80,7 +80,7 @@ public class PlayerStoryMovements : MonoBehaviour
 
     void OnSkip(InputValue input)
     {
-        if (linesDisplayed >= linesNumInScene)
+        if (isInStoryMode && linesDisplayed >= linesNumInScene)
         {
             ExitStoryMode();
             dialogCanvas.SetActive(false);
