@@ -27,16 +27,16 @@ EditorBuildSettings:
     path: Assets/Scenes/2_Sea/SeaPlatformer.unity
     guid: f1891b0dba164a4458bad4ab740d9b0e
   - enabled: 1
-    path: Assets/Scenes/IslandStory1.unity
+    path: Assets/Scenes/3_Island/IslandStory1.unity
     guid: dc3b48fbf2afc2443839f65f56a0fee9
   - enabled: 1
-    path: Assets/Scenes/IslandHiddenObjs.unity
+    path: Assets/Scenes/3_Island/IslandHiddenObjs.unity
     guid: d5b3ca6a2c5626f4082f8f85d51c3a0a
   - enabled: 1
-    path: Assets/Scenes/IslandStory2.unity
+    path: Assets/Scenes/3_Island/IslandStory2.unity
     guid: f8714ade5bcc4bf40a3b73c7f600817b
   - enabled: 1
-    path: Assets/Scenes/IslandPlatformer.unity
+    path: Assets/Scenes/3_Island/IslandPlatformer.unity
     guid: 22be1286068b6a0449cdfc07d96f7844
   - enabled: 1
     path: Assets/Scenes/Platformer.unity

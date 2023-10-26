@@ -10,7 +10,7 @@ public class HiddenObjectsLevel : MonoBehaviour
     private GameObject doors;
     [SerializeField] ParticleSystem doorsParticles;
     [SerializeField] TextMeshProUGUI task1;
-    [SerializeField] private List<HiddenObjectData> hiddenObjectsList;
+    [SerializeField] List<HiddenObjectData> hiddenObjectsList;
 
     private int founded = 0;
     private int objectsToFindNumber;
