@@ -12133,14 +12133,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2208538695880519673, guid: 73d0a69b4c7ec6b4aaa2eb91686b4e37, type: 3}
-      propertyPath: m_SortingLayer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2208538695880519673, guid: 73d0a69b4c7ec6b4aaa2eb91686b4e37, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 2098523849
-      objectReference: {fileID: 0}
     - target: {fileID: 3118455288774146920, guid: 73d0a69b4c7ec6b4aaa2eb91686b4e37, type: 3}
       propertyPath: m_Name
       value: bead
