@@ -201,11 +201,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 64.0684, y: 19.994541}
-      - {x: -18.662436, y: 19.625462}
+    - - {x: 63.89223, y: 18.910103}
+      - {x: -18.760084, y: 18.551336}
       - {x: -18.673693, y: -11.989144}
       - {x: 254.55284, y: -12.071016}
-      - {x: 254.48059, y: 19.93888}
+      - {x: 254.48059, y: 18.401846}
   m_UseDelaunayMesh: 0
 --- !u!483693784 &96343001
 TilemapRenderer:
@@ -13788,7 +13788,7 @@ Transform:
   m_GameObject: {fileID: 558138018}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7764053, y: 2.0970364, z: -10}
+  m_LocalPosition: {x: -1.7978516, y: 2.1234846, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15486,8 +15486,8 @@ SpriteRenderer:
   m_SortingLayerID: 856481977
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8e9982651a674cc43ab0f41a9674094c, type: 3}
-  m_Color: {r: 0.21698111, g: 0.19588743, b: 0.16887681, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f0e2b00f9ffaf1247b498c88fdb7261a, type: 3}
+  m_Color: {r: 0.31132078, g: 0.20901568, b: 0.116011046, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
