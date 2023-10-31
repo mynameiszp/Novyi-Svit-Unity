@@ -47,7 +47,7 @@ public class PlayerStoryMovements : MonoBehaviour
     private string currentScene;
     private Vector3 initialScale;
 
-    IEnumerator Start()
+    private void Awake()
     {
         feetCollider = GetComponent<BoxCollider2D>();
         initialScale = transform.localScale;
@@ -56,6 +56,7 @@ public class PlayerStoryMovements : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         bodyCollider = GetComponent<CapsuleCollider2D>();
         doors = GameObject.FindWithTag("Exit");
+        if (doors != null) doors.SetActive(false);
         mainCharacters = GameObject.FindWithTag("MainCharacters");
         followCamera = GameObject.FindWithTag("FollowCamera");
         defaultFollowCameraLens = followCamera.GetComponent<CinemachineVirtualCamera>().m_Lens;
@@ -63,16 +64,18 @@ public class PlayerStoryMovements : MonoBehaviour
         opponentAvatarPosition = opponentAvatar.transform.localPosition.x;
         dialogCanvas.SetActive(false);
         instructionCanvas.SetActive(false);
+    }
+
+    IEnumerator Start()
+    {
+
         yield return dataLoader;
         dataLoader = GameObject.FindWithTag("Player").GetComponent<DataLoader>();
         yield return dataLoader;
-        if (!doors == null)
-        {
-            doors.SetActive(false);
-        }
         linesDisplayed = dataLoader.GetStartLineNumber(currentScene);
         linesNumInScene = dataLoader.GetLinesNumberInScene(currentScene) + linesDisplayed;
         speakersInScene = dataLoader.GetSpeakersInScene(currentScene);
+
     }
 
     void Update()
@@ -88,7 +91,7 @@ public class PlayerStoryMovements : MonoBehaviour
             ExitStoryMode();
             dialogCanvas.SetActive(false);
             mainCharacters.SetActive(false);
-            if(doors == null) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
+            if (doors == null) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             else doors.SetActive(true);
         }
         if (isInStoryMode && linesDisplayed < linesNumInScene)
