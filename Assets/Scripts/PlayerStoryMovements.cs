@@ -66,7 +66,10 @@ public class PlayerStoryMovements : MonoBehaviour
         yield return dataLoader;
         dataLoader = GameObject.FindWithTag("Player").GetComponent<DataLoader>();
         yield return dataLoader;
-        doors.SetActive(false);
+        if (!doors == null)
+        {
+            doors.SetActive(false);
+        }
         linesDisplayed = dataLoader.GetStartLineNumber(currentScene);
         linesNumInScene = dataLoader.GetLinesNumberInScene(currentScene) + linesDisplayed;
         speakersInScene = dataLoader.GetSpeakersInScene(currentScene);
@@ -84,8 +87,9 @@ public class PlayerStoryMovements : MonoBehaviour
         {
             ExitStoryMode();
             dialogCanvas.SetActive(false);
-            doors.SetActive(true);
             mainCharacters.SetActive(false);
+            if(doors == null) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
+            else doors.SetActive(true);
         }
         if (isInStoryMode && linesDisplayed < linesNumInScene)
         {

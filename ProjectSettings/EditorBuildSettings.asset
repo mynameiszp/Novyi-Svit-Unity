@@ -42,14 +42,23 @@ EditorBuildSettings:
     path: Assets/Scenes/4_Metropolis/MetropolisStory1.unity
     guid: d38e461a522c29543b6775da9cc0462f
   - enabled: 1
-    path: Assets/Scenes/4_Metropolis/MetropolisStory2.unity
-    guid: 72243c05fd5be1240b9255b3ef7f6081
-  - enabled: 1
     path: Assets/Scenes/4_Metropolis/MetropolisHiddenObjs.unity
     guid: fdc02d64444e5f840bfdcc9f58d4fa43
   - enabled: 1
     path: Assets/Scenes/4_Metropolis/MetropolisPlatformer.unity
     guid: ba017d0ad44f5d940914f12277d50385
+  - enabled: 1
+    path: Assets/Scenes/5_Desert/DesertStory1.unity
+    guid: 1a74c2f88d04d6f4aae21b36791a2e4f
+  - enabled: 1
+    path: Assets/Scenes/5_Desert/DesertStory2.unity
+    guid: 4e9d9c7d1d1772a418b38015c1a8a129
+  - enabled: 1
+    path: Assets/Scenes/5_Desert/DesertHiddenObjs.unity
+    guid: 5b067b861e8fb73499987a00a4fbcea0
+  - enabled: 1
+    path: Assets/Scenes/5_Desert/DesertPlatformer.unity
+    guid: f75ce5783d8ff864abd2708190d6fca5
   - enabled: 1
     path: Assets/Scenes/Platformer.unity
     guid: 374044485e6d09142a69eabf4ac1cb5d
