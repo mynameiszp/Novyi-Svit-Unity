@@ -46,6 +46,8 @@ public class PlayerStoryMovements : MonoBehaviour
     private Vector3 defaultFollowCameraOffset;
     private string currentScene;
     private Vector3 initialScale;
+    private GameObject warningCanvas;
+    private GameObject exitButton;
 
     private void Awake()
     {
@@ -55,6 +57,9 @@ public class PlayerStoryMovements : MonoBehaviour
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
         bodyCollider = GetComponent<CapsuleCollider2D>();
+        exitButton = GameObject.FindWithTag("ExitButton");
+        warningCanvas = GameObject.FindWithTag("WarningCanvas");
+        if (warningCanvas != null) warningCanvas.SetActive(false);
         doors = GameObject.FindWithTag("Exit");
         if (doors != null) doors.SetActive(false);
         mainCharacters = GameObject.FindWithTag("MainCharacters");
@@ -68,14 +73,12 @@ public class PlayerStoryMovements : MonoBehaviour
 
     IEnumerator Start()
     {
-
         yield return dataLoader;
         dataLoader = GameObject.FindWithTag("Player").GetComponent<DataLoader>();
         yield return dataLoader;
         linesDisplayed = dataLoader.GetStartLineNumber(currentScene);
         linesNumInScene = dataLoader.GetLinesNumberInScene(currentScene) + linesDisplayed;
         speakersInScene = dataLoader.GetSpeakersInScene(currentScene);
-
     }
 
     void Update()
@@ -88,11 +91,11 @@ public class PlayerStoryMovements : MonoBehaviour
     {
         if (isInStoryMode && linesDisplayed >= linesNumInScene)
         {
-            ExitStoryMode();
             dialogCanvas.SetActive(false);
             mainCharacters.SetActive(false);
-            if (doors == null) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            else doors.SetActive(true);
+            ExitStoryMode();
+            if (doors == null && exitButton == null) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            else if (doors != null && exitButton == null) doors.SetActive(true);
         }
         if (isInStoryMode && linesDisplayed < linesNumInScene)
         {
@@ -127,6 +130,13 @@ public class PlayerStoryMovements : MonoBehaviour
         animator.speed = 1f;
         followCamera.GetComponent<CinemachineVirtualCamera>().m_Lens = defaultFollowCameraLens;
         followCamera.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = defaultFollowCameraOffset;
+        if (warningCanvas != null && exitButton != null) ShowWarning();
+    }
+
+    private void ShowWarning()
+    {
+        warningCanvas.SetActive(true);
+        Time.timeScale = 0;
     }
 
     private void PlayDialog()

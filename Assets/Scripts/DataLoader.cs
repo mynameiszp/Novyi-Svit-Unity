@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DataLoader : MonoBehaviour
 {
-    public string[] linesRows;
+    private string[] linesRows;
 
     IEnumerator Start()
     {
