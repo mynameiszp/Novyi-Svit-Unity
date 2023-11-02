@@ -1,30 +1,28 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class NextLevelController : MonoBehaviour
+public class NextLevelNoExit : MonoBehaviour
 {
     [SerializeField] Animator transition;
-    [SerializeField] float transitionTime = 1f;
+    [SerializeField] float transitionTime = 2f;
     private GameObject ground;
 
-    private void Awake() {
+    private void Awake()
+    {
         ground = GameObject.FindWithTag("GroundTilemap");
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void LoadNextLevel(int levelIndex)
     {
-        if (other.CompareTag("Player"))
-        {
-            StartCoroutine(LoadLevel(other.GetComponent<PlayerInput>(), SceneManager.GetActiveScene().buildIndex + 1));
-        }
+        StartCoroutine(LoadLevel(levelIndex));
     }
 
-    IEnumerator LoadLevel(PlayerInput playerInput, int levelIndex)
+    private IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start");
-        playerInput.DeactivateInput();
         if (ground != null && ground.GetComponent<SurfaceEffector2D>() != null)
         {
             ground.GetComponent<SurfaceEffector2D>().speed = 0f;

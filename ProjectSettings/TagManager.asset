@@ -16,6 +16,7 @@ TagManager:
   - Parrot
   - WarningCanvas
   - ExitButton
+  - GroundTilemap
   layers:
   - Default
   - TransparentFX

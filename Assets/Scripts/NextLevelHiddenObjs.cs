@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class NextLevelHiddenObjs : MonoBehaviour
 {
+    [SerializeField] Animator transition;
+    [SerializeField] float transitionTime = 1f;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -13,8 +16,15 @@ public class NextLevelHiddenObjs : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(position, Vector3.zero);
             if (hit && hit.collider != null)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
             }
         }
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(levelIndex);
     }
 }
