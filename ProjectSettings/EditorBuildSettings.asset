@@ -69,10 +69,10 @@ EditorBuildSettings:
     path: Assets/Scenes/7_Village/VillageStory1.unity
     guid: 8d905625eb8fafe4c9ce5e3c3f4fb91b
   - enabled: 1
-    path: Assets/Scenes/7_Village/VillageHiddenObjs.unity
-    guid: aeeb639c9fa76ba43a8e62a5e208e733
-  - enabled: 1
     path: Assets/Scenes/7_Village/VillagePlatformer.unity
     guid: e8959446ea980ac4fb2b62e0f72e0236
+  - enabled: 1
+    path: Assets/Scenes/8_New_World/NewWorldStory1.unity
+    guid: 747c7b6d22a9e9543ae8666e854ec795
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 579e8e86042185a4187483d683f809a8, type: 2}

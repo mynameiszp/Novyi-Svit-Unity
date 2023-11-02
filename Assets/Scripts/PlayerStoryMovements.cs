@@ -48,6 +48,7 @@ public class PlayerStoryMovements : MonoBehaviour
     private Vector3 initialScale;
     private GameObject warningCanvas;
     private GameObject exitButton;
+    private NextLevelNoExit nextLevelScript;
 
     private void Awake()
     {
@@ -69,6 +70,7 @@ public class PlayerStoryMovements : MonoBehaviour
         opponentAvatarPosition = opponentAvatar.transform.localPosition.x;
         dialogCanvas.SetActive(false);
         instructionCanvas.SetActive(false);
+        nextLevelScript = GetComponent<NextLevelNoExit>();
     }
 
     IEnumerator Start()
@@ -94,7 +96,7 @@ public class PlayerStoryMovements : MonoBehaviour
             dialogCanvas.SetActive(false);
             mainCharacters.SetActive(false);
             ExitStoryMode();
-            if (doors == null && exitButton == null) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if (doors == null && exitButton == null) nextLevelScript.LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 1);
             else if (doors != null && exitButton == null) doors.SetActive(true);
         }
         if (isInStoryMode && linesDisplayed < linesNumInScene)
