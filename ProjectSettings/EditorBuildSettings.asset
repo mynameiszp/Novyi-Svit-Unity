@@ -54,13 +54,16 @@ EditorBuildSettings:
     path: Assets/Scenes/5_Desert/DesertStory2.unity
     guid: 4e9d9c7d1d1772a418b38015c1a8a129
   - enabled: 1
-    path: Assets/Scenes/5_Desert/DesertHiddenObjs.unity
-    guid: 5b067b861e8fb73499987a00a4fbcea0
-  - enabled: 1
     path: Assets/Scenes/5_Desert/DesertPlatformer.unity
     guid: f75ce5783d8ff864abd2708190d6fca5
   - enabled: 1
-    path: Assets/Scenes/Platformer.unity
-    guid: 374044485e6d09142a69eabf4ac1cb5d
+    path: Assets/Scenes/6_Forest/ForestStory1.unity
+    guid: 456e77801928c0247a7b3dcbd157607e
+  - enabled: 1
+    path: Assets/Scenes/6_Forest/ForestHiddenObjs.unity
+    guid: 9c84aee7d00e5c643ad7a841549a9364
+  - enabled: 1
+    path: Assets/Scenes/6_Forest/ForestPlatformer.unity
+    guid: e7a03db2611ee6a4183755f53d0e77cd
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 579e8e86042185a4187483d683f809a8, type: 2}
