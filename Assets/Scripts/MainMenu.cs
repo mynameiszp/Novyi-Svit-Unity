@@ -49,4 +49,9 @@ public class MainMenu : MonoBehaviour
     {
 
     }
+    
+    public void OnExit()
+    {
+        Application.Quit();
+    }
 }

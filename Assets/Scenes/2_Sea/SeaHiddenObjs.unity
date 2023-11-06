@@ -6084,6 +6084,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5248225937677767687, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: pauseScreen
+      value: 
+      objectReference: {fileID: 1537807953}
     - target: {fileID: 6892245819591508285, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -6091,6 +6095,30 @@ PrefabInstance:
     - target: {fileID: 6892245819591508285, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647186164763211537, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647186164763211537, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647186164763211537, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647186164763211537, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647186164763211537, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647186164763211537, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8474800996756357566, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6121,6 +6149,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+--- !u!1 &1537807953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3238979444993208998, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+  m_PrefabInstance: {fileID: 1537807952}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1547826649
 PrefabInstance:
   m_ObjectHideFlags: 0
