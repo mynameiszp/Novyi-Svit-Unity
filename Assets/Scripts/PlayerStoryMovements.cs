@@ -71,16 +71,19 @@ public class PlayerStoryMovements : MonoBehaviour
         dialogCanvas.SetActive(false);
         instructionCanvas.SetActive(false);
         nextLevelScript = GetComponent<NextLevelNoExit>();
+        dataLoader = GameObject.FindWithTag("Player").GetComponent<DataLoader>();
     }
 
     IEnumerator Start()
     {
         yield return dataLoader;
-        dataLoader = GameObject.FindWithTag("Player").GetComponent<DataLoader>();
-        yield return dataLoader;
-        linesDisplayed = dataLoader.GetStartLineNumber(currentScene);
-        linesNumInScene = dataLoader.GetLinesNumberInScene(currentScene) + linesDisplayed;
-        speakersInScene = dataLoader.GetSpeakersInScene(currentScene);
+        if (dataLoader.GetStartLineNumber(currentScene) == null) dataLoader = null;
+        if (dataLoader != null)
+        {
+            linesDisplayed = (int)dataLoader.GetStartLineNumber(currentScene);
+            linesNumInScene = (int)(dataLoader.GetLinesNumberInScene(currentScene) + linesDisplayed);
+            speakersInScene = dataLoader.GetSpeakersInScene(currentScene);
+        }
     }
 
     void Update()
@@ -91,25 +94,28 @@ public class PlayerStoryMovements : MonoBehaviour
 
     void OnSkip(InputValue input)
     {
-        if (isInStoryMode && linesDisplayed >= linesNumInScene)
+        if (dataLoader != null)
         {
-            dialogCanvas.SetActive(false);
-            mainCharacters.SetActive(false);
-            ExitStoryMode();
-            if (doors == null && exitButton == null) nextLevelScript.LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 1);
-            else if (doors != null && exitButton == null) doors.SetActive(true);
-        }
-        if (isInStoryMode && linesDisplayed < linesNumInScene)
-        {
-            instructionCanvas.SetActive(false);
-            dialogCanvas.SetActive(true);
-            PlayDialog();
+            if (isInStoryMode && linesDisplayed >= linesNumInScene)
+            {
+                dialogCanvas.SetActive(false);
+                mainCharacters.SetActive(false);
+                ExitStoryMode();
+                if (doors == null && exitButton == null) nextLevelScript.LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 1);
+                else if (doors != null && exitButton == null) doors.SetActive(true);
+            }
+            if (isInStoryMode && linesDisplayed < linesNumInScene)
+            {
+                instructionCanvas.SetActive(false);
+                dialogCanvas.SetActive(true);
+                PlayDialog();
+            }
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "MainCharacters")
+        if (other.tag == "MainCharacters" && dataLoader != null)
         {
             EnterStoryMode();
             instructionCanvas.SetActive(true);

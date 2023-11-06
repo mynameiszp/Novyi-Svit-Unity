@@ -1,54 +1,79 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DataLoader : MonoBehaviour
 {
     private string[] linesRows;
+    private bool isEmpty;
 
-    IEnumerator Start()
+    private void Awake()
     {
         WWW linesData = new WWW("http://localhost:3307/noviy_svit_db/LinesData.php");
-        yield return linesData;
-        string linesDataString = linesData.text.Remove(linesData.text.Length - 1);
-        linesRows = linesDataString.Split(';');
+        while (!linesData.isDone){}
+        isEmpty = linesData.text == "";
+        if (!isEmpty)
+        {
+            string linesDataString = linesData.text.Remove(linesData.text.Length - 1);
+            linesRows = linesDataString.Split(';');
+        }
+        else
+        {
+            SceneManager.LoadScene("ServerError");
+        }
     }
 
     private string GetDataValue(int row, string index)
     {
-        string value = linesRows[row].Substring(linesRows[row].IndexOf(index) + index.Length);
-        value = value.Remove(value.IndexOf("|"));
-        return value;
+        string result = null;
+        if (!isEmpty)
+        {
+            string value = linesRows[row].Substring(linesRows[row].IndexOf(index) + index.Length);
+            value = value.Remove(value.IndexOf("|"));
+            result = value;
+        }
+        return result;
     }
 
-    public int GetLinesNumberInScene(string sceneName)
+    public int? GetLinesNumberInScene(string sceneName)
     {
-        int number = 0;
-        foreach (var row in linesRows)
+        int? result = null;
+        if (!isEmpty)
         {
-            if (row.Contains(sceneName))
+            int number = 0;
+            foreach (var row in linesRows)
             {
-                number++;
+                if (row.Contains(sceneName))
+                {
+                    number++;
+                }
             }
+            result = number;
         }
-        return number;
+        return result;
     }
 
     public List<string> GetSpeakersInScene(string sceneName)
     {
-        List<string> speakers = new List<string>();
-        for (int row = 0; row < linesRows.Length; row++)
+        List<string> result = null;
+        if (!isEmpty)
         {
-            if (linesRows[row].Contains(sceneName))
+            List<string> speakers = new List<string>();
+            for (int row = 0; row < linesRows.Length; row++)
             {
-                name = GetDataValue(row, "Speaker_name:");
-                if (!speakers.Contains(name))
+                if (linesRows[row].Contains(sceneName))
                 {
-                    speakers.Add(name);
+                    name = GetDataValue(row, "Speaker_name:");
+                    if (!speakers.Contains(name))
+                    {
+                        speakers.Add(name);
+                    }
                 }
             }
+            result = speakers;
         }
-        return speakers;
+        return result;
     }
 
     public string GetCurrentSpeaker(int row)
@@ -66,16 +91,22 @@ public class DataLoader : MonoBehaviour
         return GetDataValue(row, "Avatar_link:");
     }
 
-    public int GetStartLineNumber(string sceneName){
-        int number = 0;
-        for (int row = 0; row < linesRows.Length; row++)
+    public int? GetStartLineNumber(string sceneName)
+    {
+        int? result = null;
+        if (!isEmpty)
         {
-            if (linesRows[row].Contains(sceneName))
+            int number = 0;
+            for (int row = 0; row < linesRows.Length; row++)
             {
-                number = row;
-                break;
+                if (linesRows[row].Contains(sceneName))
+                {
+                    number = row;
+                    break;
+                }
             }
+            result = number;
         }
-        return number;
+        return result;
     }
 }
