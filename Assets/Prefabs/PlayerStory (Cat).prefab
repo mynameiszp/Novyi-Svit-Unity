@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 637964743328401405}
   - component: {fileID: 5177289527649315822}
   - component: {fileID: 5109641462666465049}
+  - component: {fileID: 1678599559189378491}
   m_Layer: 9
   m_Name: PlayerStory (Cat)
   m_TagString: Player
@@ -271,3 +272,15 @@ MonoBehaviour:
   opponentAvatar: {fileID: 0}
   cameraOffset: {x: 0, y: 0}
   cameraLensInStory: 0
+--- !u!114 &1678599559189378491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2730648109340281071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f6149b940781b448c438a90f15d84c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -4355,6 +4355,30 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7647186164763211537, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647186164763211537, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647186164763211537, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647186164763211537, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647186164763211537, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647186164763211537, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8474800996756357566, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5862,7 +5886,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2328843324462354332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b39c1a451bd8d3c469121ffd72e27e25, type: 3}
+  m_Script: {fileID: 11500000, guid: 94f6149b940781b448c438a90f15d84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &4256328306789873338
