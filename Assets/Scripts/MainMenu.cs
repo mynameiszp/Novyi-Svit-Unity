@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] Canvas settingsCanvas;
+    
+    void Awake()
+    {
+        settingsCanvas.gameObject.SetActive(false);
+    }
+
     void Start()
     {
         if (!PlayerPrefs.HasKey("IsFirstTimeOpening"))
@@ -47,9 +54,9 @@ public class MainMenu : MonoBehaviour
 
     public void OnSettings()
     {
-
+        settingsCanvas.gameObject.SetActive(true);
     }
-    
+
     public void OnExit()
     {
         Application.Quit();
