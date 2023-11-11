@@ -518,6 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 3238979444993208998}
+  audioMixer: {fileID: 24100000, guid: e91f7abb92295bb4a822c560d65ba2ac, type: 2}
 --- !u!1 &2492913939258682429
 GameObject:
   m_ObjectHideFlags: 0

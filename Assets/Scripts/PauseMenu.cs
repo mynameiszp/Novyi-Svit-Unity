@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseScreen;
+    [SerializeField] AudioMixer audioMixer;
+    private float previousAudioValue = 0;
 
     void Start()
     {
@@ -26,7 +29,17 @@ public class PauseMenu : MonoBehaviour
 
     public void OnSettings()
     {
-
+        float value;
+        if (audioMixer.GetFloat("Volume", out value))
+        {
+            if (value > -80)
+            {
+                previousAudioValue = value;
+                audioMixer.SetFloat("Volume", -80);
+            }
+            else audioMixer.SetFloat("Volume", previousAudioValue);
+        }
+        Debug.Log(value);
     }
 
     public void OnMainMenu()

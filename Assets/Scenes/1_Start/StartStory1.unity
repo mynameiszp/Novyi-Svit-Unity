@@ -6968,6 +6968,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6152853009687064254, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_text
+      value: 'Sound: On/Off'
+      objectReference: {fileID: 0}
     - target: {fileID: 7647186164763211537, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
