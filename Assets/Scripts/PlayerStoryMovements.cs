@@ -25,17 +25,13 @@ public class PlayerStoryMovements : MonoBehaviour
     [SerializeField] Vector2 cameraOffset;
     [SerializeField] float cameraLensInStory;
 
-    private CapsuleCollider2D bodyCollider;
-    private BoxCollider2D feetCollider;
     private Animator animator;
-    private Rigidbody2D rigidbody;
     private Vector2 moveInput;
     private LevelStoryData storyData;
     private bool canMove = true;
     private bool isInStoryMode = false;
     private int linesNumInScene;
     private int linesDisplayed;
-    private List<string> speakersInScene;
     private Rect rec;
     private Texture2D avatarTexture;
     private float opponentAvatarPosition;
@@ -52,12 +48,9 @@ public class PlayerStoryMovements : MonoBehaviour
 
     private void Awake()
     {
-        feetCollider = GetComponent<BoxCollider2D>();
         initialScale = transform.localScale;
         currentScene = SceneManager.GetActiveScene().name;
         animator = GetComponent<Animator>();
-        rigidbody = GetComponent<Rigidbody2D>();
-        bodyCollider = GetComponent<CapsuleCollider2D>();
         exitButton = GameObject.FindWithTag("ExitButton");
         warningCanvas = GameObject.FindWithTag("WarningCanvas");
         if (warningCanvas != null) warningCanvas.SetActive(false);
@@ -77,11 +70,8 @@ public class PlayerStoryMovements : MonoBehaviour
     IEnumerator Start()
     {
         yield return storyData;
-        
-            linesDisplayed = storyData.GetStartLineNumber(currentScene);
-            linesNumInScene = storyData.GetLinesNumberInScene(currentScene) + linesDisplayed;
-            speakersInScene = storyData.GetSpeakersInScene(currentScene);
-        
+        linesDisplayed = storyData.GetStartLineNumber(currentScene);
+        linesNumInScene = storyData.GetLinesNumberInScene(currentScene) + linesDisplayed;
     }
 
     void Update()
@@ -92,22 +82,20 @@ public class PlayerStoryMovements : MonoBehaviour
 
     void OnSkip(InputValue input)
     {
-        
-            if (isInStoryMode && linesDisplayed >= linesNumInScene)
-            {
-                dialogCanvas.SetActive(false);
-                mainCharacters.SetActive(false);
-                ExitStoryMode();
-                if (doors == null && exitButton == null) nextLevelScript.LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 1);
-                else if (doors != null && exitButton == null) doors.SetActive(true);
-            }
-            if (isInStoryMode && linesDisplayed < linesNumInScene)
-            {
-                instructionCanvas.SetActive(false);
-                dialogCanvas.SetActive(true);
-                PlayDialog();
-            }
-        
+        if (isInStoryMode && linesDisplayed >= linesNumInScene)
+        {
+            dialogCanvas.SetActive(false);
+            mainCharacters.SetActive(false);
+            ExitStoryMode();
+            if (doors == null && exitButton == null) nextLevelScript.LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 1);
+            else if (doors != null && exitButton == null) doors.SetActive(true);
+        }
+        if (isInStoryMode && linesDisplayed < linesNumInScene)
+        {
+            instructionCanvas.SetActive(false);
+            dialogCanvas.SetActive(true);
+            PlayDialog();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
