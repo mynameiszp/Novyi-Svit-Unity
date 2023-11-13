@@ -75,6 +75,9 @@ EditorBuildSettings:
     path: Assets/Scenes/8_New_World/NewWorldStory1.unity
     guid: 747c7b6d22a9e9543ae8666e854ec795
   - enabled: 1
+    path: Assets/Scenes/8_New_World/FinalScene.unity
+    guid: ab1b8a5e6238bf542adcdd56fff6f3a5
+  - enabled: 1
     path: Assets/Scenes/ServerError.unity
     guid: a5e2aa7ff1f715346b6e29d03a7aec71
   m_configObjects:

@@ -27,7 +27,7 @@ public class PauseMenu : MonoBehaviour
         pauseScreen.SetActive(false);
     }
 
-    public void OnSettings()
+    public void OnSound()
     {
         float value;
         if (audioMixer.GetFloat("Volume", out value))
