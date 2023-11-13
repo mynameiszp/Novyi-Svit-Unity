@@ -11425,7 +11425,7 @@ CompositeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -11566,8 +11566,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1379872643
-  m_SortingLayer: 2
+  m_SortingLayerID: -461243669
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 1.2777778, y: 1.2777778, z: 0}
@@ -16085,6 +16085,30 @@ PrefabInstance:
     - target: {fileID: 1697264012217685840, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
       propertyPath: m_Name
       value: PauseMenuCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132861653173478206, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132861653173478206, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132861653173478206, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132861653173478206, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132861653173478206, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132861653173478206, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3315073802107861935, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
       propertyPath: m_AnchorMax.y
