@@ -5751,6 +5751,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3132861653173478206, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132861653173478206, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132861653173478206, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132861653173478206, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132861653173478206, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132861653173478206, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3315073802107861935, guid: 70b57a4204c495d4eb70241072bf20d7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6420,6 +6444,10 @@ PrefabInstance:
     - target: {fileID: 1198391598203286755, guid: be7f229f4008507478e903382ded57db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7695321985429387135, guid: be7f229f4008507478e903382ded57db, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -45.24292
       objectReference: {fileID: 0}
     - target: {fileID: 7703131667573396275, guid: be7f229f4008507478e903382ded57db, type: 3}
       propertyPath: m_Name

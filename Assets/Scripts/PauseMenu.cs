@@ -27,6 +27,13 @@ public class PauseMenu : MonoBehaviour
         pauseScreen.SetActive(false);
     }
 
+    public void OnRestart()
+    {
+        Time.timeScale = 1;
+        FindObjectOfType<GameSession>().ProcessPlayerDeath();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void OnSound()
     {
         if (audioMixer.GetFloat("Volume", out float value))
@@ -44,10 +51,5 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
-    }
-
-    public void OnExit()
-    {
-        Application.Quit();
     }
 }
