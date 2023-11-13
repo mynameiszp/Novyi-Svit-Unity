@@ -29,8 +29,7 @@ public class PauseMenu : MonoBehaviour
 
     public void OnSound()
     {
-        float value;
-        if (audioMixer.GetFloat("Volume", out value))
+        if (audioMixer.GetFloat("Volume", out float value))
         {
             if (value > -80)
             {
@@ -39,7 +38,6 @@ public class PauseMenu : MonoBehaviour
             }
             else audioMixer.SetFloat("Volume", previousAudioValue);
         }
-        Debug.Log(value);
     }
 
     public void OnMainMenu()
