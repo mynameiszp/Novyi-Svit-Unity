@@ -48,14 +48,8 @@ public class GameSession : MonoBehaviour
         return linesRows;
     }
 
-    public void ProcessPlayerDeath()
-    {
-        ResetGameSession();
-    }
-
-    void ResetGameSession()
+    public void ResetGameSession()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Destroy(gameObject);
     }
 }

@@ -30,8 +30,7 @@ public class PauseMenu : MonoBehaviour
     public void OnRestart()
     {
         Time.timeScale = 1;
-        FindObjectOfType<GameSession>().ProcessPlayerDeath();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        FindObjectOfType<GameSession>().ResetGameSession();
     }
 
     public void OnSound()

@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger("hasFallen");
             isAlive = false;
             yield return new WaitForSecondsRealtime(waitBeforeReload);
-            FindObjectOfType<GameSession>().ProcessPlayerDeath();
+            FindObjectOfType<GameSession>().ResetGameSession();
         }
     }
 
