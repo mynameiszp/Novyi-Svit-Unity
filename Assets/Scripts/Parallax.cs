@@ -21,9 +21,7 @@ public class Parallax : MonoBehaviour
         }
         if (mainCam.position.x > sideBG.position.x || mainCam.position.x < sideBG.position.x)
         {
-            Transform temp = middleBG;
-            middleBG = sideBG;
-            sideBG = temp;
+            (sideBG, middleBG) = (middleBG, sideBG);
         }
     }
 }

@@ -1,0 +1,137 @@
+--
+-- Структура таблиці `lines`
+--
+
+CREATE TABLE `lines` (
+  `ID` int(4) NOT NULL,
+  `Scene_name` varchar(40) NOT NULL,
+  `Speaker_name` varchar(30) NOT NULL,
+  `Text` varchar(220) NOT NULL,
+  `Avatar_link` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп даних таблиці `lines`
+--
+
+INSERT INTO `lines` (`ID`, `Scene_name`, `Speaker_name`, `Text`, `Avatar_link`) VALUES
+(1, 'StartStory1', 'Aunty', 'Oh, my sweet nephew! You grew up so fast. It\'s time to let you go. Maybe you\'ll find the New World your parents had always tried to reach... I\'m so nervous.', 'Assets/Sprites/Cat/Avatars/Idle (1.5).png'),
+(2, 'StartStory1', 'Player', 'Don\'t worry, aunty. I\'ll be fine! All the doors are open to me! This world is so big. I have no doubts that I\'ll discover that place \r\n*whispers* at all costs...\r\n', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(3, 'StartStory1', 'Brother', 'I\'ll miss you so much... Come back as fast as you can! I don\'t know how to live if you are not here...', 'Assets/Sprites/Cat/Avatars/Idle (1.4).png'),
+(4, 'StartStory1', 'Player', 'Of course, sweety! I\'ll take you all with me. But while far away, I\'m going to miss all of you...', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(5, 'StartStory1', 'Oshi', 'It\'s hard to go away from family. You\'ll face different challenges. And at the end of the day you won\'t be the same... Oh, Higher Powers, help him!', 'Assets/Sprites/Cat/Avatars/Idle (1.7).png'),
+(6, 'StartStory1', 'Player', 'Thank you, Oshi. It\'s time to go.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(7, 'SeaStory1', 'Player', 'Oh, hi! Is your ship leaving?', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(8, 'SeaStory1', 'Jo', 'Ahoy! Look who\'s there! Yep, we stopped only to refill our stocks.', 'Assets/Sprites/Supporters/Avatars/pirate1_avatar.png'),
+(9, 'SeaStory1', 'Player', 'May I join you? I need to get to the opposite shore.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(10, 'SeaStory1', 'Billy', 'Well, I don\'t really know. We already have enough weight on the ship.', 'Assets/Sprites/Supporters/Avatars/pirate2_avatar.png'),
+(11, 'SeaStory1', 'Jo', 'Come on, Billy! This youngter may become a good company for Michie. You know his current mood.', 'Assets/Sprites/Supporters/Avatars/pirate1_avatar.png'),
+(12, 'SeaStory1', 'Billy', 'Oh, fine... Get on the board!', 'Assets/Sprites/Supporters/Avatars/pirate2_avatar.png'),
+(13, 'SeaStory1', 'Player', 'Thanks!', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(14, 'SeaStory2', 'Player', 'Hi, Michie. Nice to meet you.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(15, 'SeaStory2', 'Michie', 'Hi. I suppose you\'re my new roommate.', 'Assets/Sprites/Supporters/Avatars/Parrot_avatar_beads.png'),
+(16, 'SeaStory2', 'Player', 'Kind of. I\'m off to find the New World!', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(17, 'SeaStory2', 'Michie', 'Ha-ha. The only thing you\'ll find here is complete loss.', 'Assets/Sprites/Supporters/Avatars/Parrot_avatar_beads.png'),
+(18, 'SeaStory2', 'Player', '...', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(19, 'SeaStory2', 'Michie', 'Have you ever been away from your place for a long time?! It is awful. It is scareful. You know nothing about what you\'re going to face...', 'Assets/Sprites/Supporters/Avatars/Parrot_avatar_beads.png'),
+(20, 'SeaStory2', 'Player', 'Well, sometimes I\'m sad but...', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(21, 'SeaStory2', 'Michie', 'Shock. Dissapointment. Feeling of being disconnected from the real world. Like your body doesn\'t suit you anymore. You want to run away, but you are stuck.', 'Assets/Sprites/Supporters/Avatars/Parrot_avatar_beads.png'),
+(22, 'SeaStory2', 'Player', 'I see what this is about... Look, I\'m here not to blame you for your feelings. I\'m sure that you have the reasons to feel the way you do. Maybe there\'s something I can do for you?', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(23, 'SeaStory2', 'Michie', 'Nothing. All I want is to... Damn!', 'Assets/Sprites/Supporters/Avatars/Parrot_avatar_beads.png'),
+(24, 'SeaStory2', 'Michie', 'Damn, damn, damn! Those beads are everywhere!', 'Assets/Sprites/Supporters/Avatars/Parrot_avatar.png'),
+(25, 'SeaStory2', 'Player', 'Don\'t worry! It\'s okay. Everything is fine. Breathe in and breathe out. I\'ll get them.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(26, 'IslandStory1', 'Player', 'Where am I? This place looks so unusual and... hostile.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(27, 'IslandStory1', 'Blisk', 'Welcome to our island! Feel free to do whatever you want to!', 'Assets/Sprites/Supporters/Avatars/Blisk_avatar.png'),
+(28, 'IslandStory1', 'Player', 'Oh, hi. Do you live here?', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(29, 'IslandStory1', 'Blisk', 'Yep, my house is over there.', 'Assets/Sprites/Supporters/Avatars/Blisk_avatar.png'),
+(30, 'IslandStory1', 'Player', 'But shouldn\'t you live... in the water?', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(31, 'IslandStory1', 'Blisk', 'It is so cruel of you. Why do you even care?', 'Assets/Sprites/Supporters/Avatars/Blisk_avatar.png'),
+(32, 'IslandStory1', 'Player', 'Sorry! I didn\'t mean to offend you. It\'s definetely up to you.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(33, 'IslandStory1', 'Player', 'I was just worried about you. It seems like your natural habitat is supposed to be water...', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(34, 'IslandStory1', 'Blisk', 'Well, probably it is... But it doesn\'t matter. I was thrown here by the ocean and locals helped me a lot! Now I\'m just like them.', 'Assets/Sprites/Supporters/Avatars/Blisk_avatar.png'),
+(35, 'IslandStory1', 'Player', 'I\'m glad they\'ve cared about you. So, you didn\'t try to go back to ocean?', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(36, 'IslandStory1', 'Blisk', 'Never! Why would I? This is my home now and I feel good here.', 'Assets/Sprites/Supporters/Avatars/Blisk_avatar.png'),
+(37, 'IslandStory1', 'Player', 'I just have concerns about your physical condition? Is everything great?', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(38, 'IslandStory1', 'Blisk', 'Well, I have troubles breathing and moving here, but I think this is the way it has to be.', 'Assets/Sprites/Supporters/Avatars/Blisk_avatar.png'),
+(39, 'IslandStory1', 'Player', 'Oh, honey... Maybe you should try going back to the ocean? It doesn\'t mean you have to stay there. But I reckon you have to try.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(40, 'IslandStory1', 'Blisk', 'Look, it is not such a problem. Breating is as much important as... Oh... Feels like another seizure... Help?', 'Assets/Sprites/Supporters/Avatars/Blisk_avatar.png'),
+(41, 'IslandStory1', 'Player', 'Oh, God... I must fill the backet.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(42, 'IslandStory2', 'Blisk', 'Wow... Thank you... Probably you were right... I gotta try.', 'Assets/Sprites/Supporters/Avatars/Blisk_avatar.png'),
+(43, 'IslandStory2', 'Player', 'No problem. I\'m glad you decided so.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(44, 'IslandStory2', 'Blisk', 'But what about you? What are you doing here?', 'Assets/Sprites/Supporters/Avatars/Blisk_avatar.png'),
+(45, 'IslandStory2', 'Player', 'Oh, I\'m... I\'m on my way to the New World! I want to reach this place at all cost.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(46, 'IslandStory2', 'Blisk', 'But... For what?', 'Assets/Sprites/Supporters/Avatars/Blisk_avatar.png'),
+(47, 'IslandStory2', 'Player', 'Well, I... It\'s... It\'s the place where all dreams come true! The grass is greener and the sky is bluer!', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(48, 'IslandStory2', 'Blisk', 'And what about your tribe?', 'Assets/Sprites/Supporters/Avatars/Blisk_avatar.png'),
+(49, 'IslandStory2', 'Player', 'They will go after me! We\'ll live our happy life together. There.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(50, 'IslandStory2', 'Blisk', 'But... Are you sure they will come after you? Seems like most of them already have the life they wanted.', 'Assets/Sprites/Supporters/Avatars/Blisk_avatar.png'),
+(51, 'IslandStory2', 'Player', 'Of course they will! Because... because...', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(52, 'IslandStory2', 'Player', 'I don\'t know... I\'ve always thought I\'m doing this for them, but now... Maybe nobody needs it...', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(53, 'IslandStory2', 'Blisk', 'Looks like you\'ve got a lot of things to think about...', 'Assets/Sprites/Supporters/Avatars/Blisk_avatar.png'),
+(54, 'MetropolisStory1', 'Player', 'Looks... oppressive...', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(55, 'MetropolisStory1', 'Bummy', 'Isn\'t it? Always had the same feeling.', 'Assets/Sprites/Supporters/Avatars/Bug_avatar.png'),
+(56, 'MetropolisStory1', 'Player', 'Hey. How is it going?', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(57, 'MetropolisStory1', 'Bummy', 'Pretty awful. I\'m just stuck here. Every day is the same.', 'Assets/Sprites/Supporters/Avatars/Bug_avatar.png'),
+(58, 'MetropolisStory1', 'Player', 'Look, you gotta change the place! I don\'t understand how you live here.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(59, 'MetropolisStory1', 'Bummy', 'Its just... I don\'t know if I can. And if there is any sense. The world is tough. Once you feel the greatest, the next moment you are just noone.', 'Assets/Sprites/Supporters/Avatars/Bug_avatar.png'),
+(60, 'MetropolisStory1', 'Player', 'I see... I also have some doubts. It feels like I\'m not going to make it. I keep going and going, but... there\'s no end...', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(61, 'MetropolisStory1', 'Bummy', 'Yeah... I have an idea. You may join me if you\'d like to. Happiness can be found even in the darkest times.', 'Assets/Sprites/Supporters/Avatars/Bug_avatar.png'),
+(62, 'DesertStory1', 'Player', 'Hello? Is anybody here?', 'Assets/Sprites/Cat/Avatars/Cat_sad_avatar.png'),
+(63, 'DesertStory1', 'Someone', 'Please... don\'t bother me...', 'Assets/Sprites/Supporters/Avatars/Empty.png'),
+(64, 'DesertStory1', 'Player', 'Oh, em... hi. I\'m just looking for...', 'Assets/Sprites/Cat/Avatars/Cat_sad_avatar.png'),
+(65, 'DesertStory1', 'Someone', 'I\'m begging you, please! Just go!', 'Assets/Sprites/Supporters/Avatars/Empty.png'),
+(66, 'DesertStory1', 'Player', 'Sorry... sorry... I just wanted to...', 'Assets/Sprites/Cat/Avatars/Cat_sad_avatar.png'),
+(67, 'DesertStory1', 'Someone', 'Screw it.', 'Assets/Sprites/Supporters/Avatars/Empty.png'),
+(68, 'DesertStory2', 'Spooker', 'What. Ask and get out.', 'Assets/Sprites/Supporters/Avatars/Spooker_avatar.png'),
+(69, 'DesertStory2', 'Player', 'I\'m so sorry, but... what happend to you?', 'Assets/Sprites/Cat/Avatars/Cat_sad_avatar.png'),
+(70, 'DesertStory2', 'Spooker', 'Frustration. Hopelessness. Depression. Feeling that nothing matters. Pick whatever you want.', 'Assets/Sprites/Supporters/Avatars/Spooker_avatar.png'),
+(71, 'DesertStory2', 'Player', 'Depression. Represents me the best now.', 'Assets/Sprites/Cat/Avatars/Cat_crying_avatar.png'),
+(72, 'DesertStory2', 'Spooker', 'Same. I just can\'t get myself together. It hard to sleep, to think, to do... anything...', 'Assets/Sprites/Supporters/Avatars/Spooker_avatar.png'),
+(73, 'DesertStory2', 'Player', 'I understand. It\'s like you\'re the one who messed your life...', 'Assets/Sprites/Cat/Avatars/Cat_crying_avatar.png'),
+(74, 'DesertStory2', 'Spooker', 'A failure. This pain is so strong that you try to convert it to... physical pain...', 'Assets/Sprites/Supporters/Avatars/Spooker_avatar.png'),
+(75, 'DesertStory2', 'Player', 'You think about everything you\'ve done and the purpose. But... there\'s no sense in any of things you wanted before. For what? Life is meaningless.', 'Assets/Sprites/Cat/Avatars/Cat_crying_avatar.png'),
+(76, 'DesertStory2', 'Spooker', 'Sometimed I start thinking about... about ending this. All of this. You know what I mean.', 'Assets/Sprites/Supporters/Avatars/Spooker_avatar.png'),
+(77, 'DesertStory2', 'Player', 'I\'m afraid so. ', 'Assets/Sprites/Cat/Avatars/Cat_crying_avatar.png'),
+(78, 'DesertStory2', 'Spooker', 'I don\'t know what to do. ', 'Assets/Sprites/Supporters/Avatars/Spooker_avatar.png'),
+(79, 'DesertStory2', 'Player', 'So do I...', 'Assets/Sprites/Cat/Avatars/Cat_crying_avatar.png'),
+(80, 'ForestStory1', 'Tiffy', 'Hello, dear? Do you need any help?', 'Assets/Sprites/Supporters/Avatars/Tiffy_avatar.png'),
+(81, 'ForestStory1', 'Player', 'Oh, hi... I... I actually do. I need to talk to someone.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(82, 'ForestStory1', 'Tiffy', 'Talk? Go on!', 'Assets/Sprites/Supporters/Avatars/Tiffy_avatar.png'),
+(83, 'ForestStory1', 'Player', 'Well... I\'m searching for The New World. If you know what I\'m talking about. But during my trip so many things happened...', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(84, 'ForestStory1', 'Player', 'Firstly I was excited, but now... I\'m not sure if its the right thing to do. I\'m so far away from home, I\'m exhausted and I have no clue how long this is going to take.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(85, 'ForestStory1', 'Player', 'I feel like... I lost myself... I\'m hesitating if my tribe actually needs it. Maybe finding this place has always been my selfish purpose.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(86, 'ForestStory1', 'Tiffy', 'If it\'s like this, why don\'t you just turn back and head home? Although you have gotten so far, coming back is always an option.', 'Assets/Sprites/Supporters/Avatars/Tiffy_avatar.png'),
+(87, 'ForestStory1', 'Player', 'This trip started from my parents. They have put their life to this. I feel that reaching the New World is my way to honor them. For everything they did.', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(88, 'ForestStory1', 'Tiffy', 'Then I think you got all the answers you need.', 'Assets/Sprites/Supporters/Avatars/Tiffy_avatar.png'),
+(89, 'VillageStory1', 'Player', 'Wow! Looks stunning!', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(90, 'VillageStory1', 'Barry', 'Hi! Familiar figure.', 'Assets/Sprites/Supporters/Avatars/Cat1_avatar.png'),
+(91, 'VillageStory1', 'Player', 'Yeah! God, I have lived my whole life not knowing that... creatures like me exist somewhere else!', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(92, 'VillageStory1', 'Okie', 'Must be surprising, buddy. We live near the New World so our colors are.. different.', 'Assets/Sprites/Supporters/Avatars/Cat2_avatar.png'),
+(93, 'VillageStory1', 'Player', 'The New World? Is it somewhere near?', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(94, 'VillageStory1', 'Mary', 'Absolutely. If it\'s something you\'re looking for you are on the right way.', 'Assets/Sprites/Supporters/Avatars/Cat3_avatar.png'),
+(95, 'VillageStory1', 'Player', 'I can\'t believe this... It\'s a place of all my wishes... What am I supposed to do now? When it\'s so close...', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(96, 'VillageStory1', 'Barry', 'Well, it\'s up to you. You gotta make your own decision.', 'Assets/Sprites/Supporters/Avatars/Cat1_avatar.png'),
+(97, 'VillageStory1', 'Player', 'Right... I\'m going to get there!', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png'),
+(98, 'NewWorldStory1', 'Yuki', 'Welcome to the New World! Well-known place but not reachable for everyone.', 'Assets/Sprites/Supporters/Avatars/Dragon_avatar.png'),
+(99, 'NewWorldStory1', 'Player', 'I can\'t believe my eyes... I\'m here!', 'Assets/Sprites/Cat/Avatars/Cat_avatar.png');
+
+--
+-- Індекси збережених таблиць
+--
+
+--
+-- Індекси таблиці `lines`
+--
+ALTER TABLE `lines`
+  ADD UNIQUE KEY `ID` (`ID`);
+
+--
+-- AUTO_INCREMENT для збережених таблиць
+--
+
+--
+-- AUTO_INCREMENT для таблиці `lines`
+--
+ALTER TABLE `lines`
+  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+COMMIT;

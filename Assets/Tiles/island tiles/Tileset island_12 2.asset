@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tileset island_12 2
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 711401148, guid: a2d9da11865dbfd49a3a715d03c08184, type: 3}
-  m_Color: {r: 0.972549, g: 0.6156863, b: 0.60784316, a: 1}
+  m_Color: {r: 1, g: 0.6273585, b: 0.6646226, a: 1}
   m_Transform:
     e00: 1
     e01: 0

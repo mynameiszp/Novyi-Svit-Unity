@@ -25,17 +25,13 @@ public class PlayerStoryMovements : MonoBehaviour
     [SerializeField] Vector2 cameraOffset;
     [SerializeField] float cameraLensInStory;
 
-    private CapsuleCollider2D bodyCollider;
-    private BoxCollider2D feetCollider;
     private Animator animator;
-    private Rigidbody2D rigidbody;
     private Vector2 moveInput;
-    private DataLoader dataLoader;
+    private LevelStoryData storyData;
     private bool canMove = true;
     private bool isInStoryMode = false;
     private int linesNumInScene;
     private int linesDisplayed;
-    private List<string> speakersInScene;
     private Rect rec;
     private Texture2D avatarTexture;
     private float opponentAvatarPosition;
@@ -52,12 +48,9 @@ public class PlayerStoryMovements : MonoBehaviour
 
     private void Awake()
     {
-        feetCollider = GetComponent<BoxCollider2D>();
         initialScale = transform.localScale;
         currentScene = SceneManager.GetActiveScene().name;
         animator = GetComponent<Animator>();
-        rigidbody = GetComponent<Rigidbody2D>();
-        bodyCollider = GetComponent<CapsuleCollider2D>();
         exitButton = GameObject.FindWithTag("ExitButton");
         warningCanvas = GameObject.FindWithTag("WarningCanvas");
         if (warningCanvas != null) warningCanvas.SetActive(false);
@@ -71,16 +64,14 @@ public class PlayerStoryMovements : MonoBehaviour
         dialogCanvas.SetActive(false);
         instructionCanvas.SetActive(false);
         nextLevelScript = GetComponent<NextLevelNoExit>();
+        storyData = GameObject.FindWithTag("Player").GetComponent<LevelStoryData>();
     }
 
     IEnumerator Start()
     {
-        yield return dataLoader;
-        dataLoader = GameObject.FindWithTag("Player").GetComponent<DataLoader>();
-        yield return dataLoader;
-        linesDisplayed = dataLoader.GetStartLineNumber(currentScene);
-        linesNumInScene = dataLoader.GetLinesNumberInScene(currentScene) + linesDisplayed;
-        speakersInScene = dataLoader.GetSpeakersInScene(currentScene);
+        yield return storyData;
+        linesDisplayed = storyData.GetStartLineNumber(currentScene);
+        linesNumInScene = storyData.GetLinesNumberInScene(currentScene) + linesDisplayed;
     }
 
     void Update()
@@ -143,20 +134,20 @@ public class PlayerStoryMovements : MonoBehaviour
 
     private void PlayDialog()
     {
-        avatarTexture = LoadPNG(dataLoader.GetSpeakerAvatarLink(linesDisplayed));
+        avatarTexture = LoadPNG(storyData.GetSpeakerAvatarLink(linesDisplayed));
         rec = new Rect(0, 0, avatarTexture.width, avatarTexture.height);
-        if (dataLoader.GetCurrentSpeaker(linesDisplayed) == "Player")
+        if (storyData.GetCurrentSpeaker(linesDisplayed) == "Player")
         {
             SetPlayerDialogPanel();
-            playerText.text = dataLoader.GetSpeakerText(linesDisplayed);
+            playerText.text = storyData.GetSpeakerText(linesDisplayed);
             playerName.text = "Player";
             playerAvatar.GetComponent<Image>().sprite = Sprite.Create(avatarTexture, rec, new Vector2(0, 0));
         }
         else
         {
             SetOpponentDialogPanel();
-            opponentText.text = dataLoader.GetSpeakerText(linesDisplayed);
-            opponentName.text = dataLoader.GetCurrentSpeaker(linesDisplayed);
+            opponentText.text = storyData.GetSpeakerText(linesDisplayed);
+            opponentName.text = storyData.GetCurrentSpeaker(linesDisplayed);
             opponentAvatar.GetComponent<Image>().sprite = Sprite.Create(avatarTexture, rec, new Vector2(0, 0));
             opponentAvatar.transform.localScale = new Vector2(-1, 1);
             opponentAvatar.transform.localPosition = new Vector2(opponentAvatarPosition - avatarTexture.width, opponentAvatar.transform.localPosition.y);

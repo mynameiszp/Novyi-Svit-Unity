@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rigidbody;
     private float waitBeforeReload = 0.05f;
     private bool isAlive = true;
+    private SurfaceEffector2D surface;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         bodyCollider = GetComponent<BoxCollider2D>();
         feetCollider = GetComponent<CapsuleCollider2D>();
+        surface = ground.GetComponent<SurfaceEffector2D>();
     }
 
     void Update()
@@ -44,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger("hasFallen");
             isAlive = false;
             yield return new WaitForSecondsRealtime(waitBeforeReload);
-            FindObjectOfType<GameSession>().ProcessPlayerDeath();
+            FindObjectOfType<GameSession>().ResetGameSession();
         }
     }
 
@@ -52,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && isAlive)
         {
-            ground.GetComponent<SurfaceEffector2D>().speed = 15f;
+            surface.speed = 15f;
             animator.SetBool("isJumping", true);
             rigidbody.velocity = new Vector2(jumpLength, jumpHeigth);
             yield return new WaitForSecondsRealtime(animator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
@@ -65,8 +67,8 @@ public class PlayerMovement : MonoBehaviour
         Vector2 currentPosition = rigidbody.transform.position;
         if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
-            rigidbody.transform.position = currentPosition + new Vector2(-3, 0);
-            ground.GetComponent<SurfaceEffector2D>().speed = 5f;
+            rigidbody.transform.position = currentPosition + new Vector2(-1, 0);
+            surface.speed = 5f;
         }
     }
 }
