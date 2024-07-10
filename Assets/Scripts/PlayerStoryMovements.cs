@@ -1,12 +1,12 @@
+using Cinemachine;
 using System.Collections;
-using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
-using System.IO;
 using UnityEngine.SceneManagement;
-using Cinemachine;
+using UnityEngine.UI;
+using Zenject;
 
 public class PlayerStoryMovements : MonoBehaviour
 {
@@ -46,6 +46,8 @@ public class PlayerStoryMovements : MonoBehaviour
     private GameObject exitButton;
     private NextLevelNoExit nextLevelScript;
 
+    [Inject] private AvatarsManager avatarsManager;
+
     private void Awake()
     {
         initialScale = transform.localScale;
@@ -60,7 +62,6 @@ public class PlayerStoryMovements : MonoBehaviour
         followCamera = GameObject.FindWithTag("FollowCamera");
         defaultFollowCameraLens = followCamera.GetComponent<CinemachineVirtualCamera>().m_Lens;
         defaultFollowCameraOffset = followCamera.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset;
-        opponentAvatarPosition = opponentAvatar.transform.localPosition.x;
         dialogCanvas.SetActive(false);
         instructionCanvas.SetActive(false);
         nextLevelScript = GetComponent<NextLevelNoExit>();
@@ -134,23 +135,20 @@ public class PlayerStoryMovements : MonoBehaviour
 
     private void PlayDialog()
     {
-        avatarTexture = LoadPNG(storyData.GetSpeakerAvatarLink(linesDisplayed));
-        rec = new Rect(0, 0, avatarTexture.width, avatarTexture.height);
         if (storyData.GetCurrentSpeaker(linesDisplayed) == "Player")
         {
             SetPlayerDialogPanel();
             playerText.text = storyData.GetSpeakerText(linesDisplayed);
             playerName.text = "Player";
-            playerAvatar.GetComponent<Image>().sprite = Sprite.Create(avatarTexture, rec, new Vector2(0, 0));
+            playerAvatar.sprite = avatarsManager.GetSpeakerAvatar("Player");
         }
         else
         {
             SetOpponentDialogPanel();
             opponentText.text = storyData.GetSpeakerText(linesDisplayed);
             opponentName.text = storyData.GetCurrentSpeaker(linesDisplayed);
-            opponentAvatar.GetComponent<Image>().sprite = Sprite.Create(avatarTexture, rec, new Vector2(0, 0));
-            opponentAvatar.transform.localScale = new Vector2(-1, 1);
-            opponentAvatar.transform.localPosition = new Vector2(opponentAvatarPosition - avatarTexture.width, opponentAvatar.transform.localPosition.y);
+            opponentAvatar.sprite = avatarsManager.GetSpeakerAvatar(opponentName.text);
+            opponentAvatar.rectTransform.localScale = new Vector3(-1 * Mathf.Abs(opponentAvatar.rectTransform.localScale.x), opponentAvatar.rectTransform.localScale.y, opponentAvatar.rectTransform.localScale.z);
         }
         linesDisplayed++;
     }

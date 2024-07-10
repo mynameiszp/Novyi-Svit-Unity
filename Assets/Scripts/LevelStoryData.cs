@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LevelStoryData : MonoBehaviour
 {
@@ -58,11 +56,6 @@ public class LevelStoryData : MonoBehaviour
     public string GetSpeakerText(int row)
     {
         return GetDataValue(row, "Text:");
-    }
-
-    public string GetSpeakerAvatarLink(int row)
-    {
-        return GetDataValue(row, "Avatar_link:");
     }
 
     public int GetStartLineNumber(string sceneName)
