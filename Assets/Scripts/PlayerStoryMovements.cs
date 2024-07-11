@@ -32,9 +32,6 @@ public class PlayerStoryMovements : MonoBehaviour
     private bool isInStoryMode = false;
     private int linesNumInScene;
     private int linesDisplayed;
-    private Rect rec;
-    private Texture2D avatarTexture;
-    private float opponentAvatarPosition;
     private GameObject doors;
     private GameObject mainCharacters;
     private GameObject followCamera;
@@ -148,7 +145,6 @@ public class PlayerStoryMovements : MonoBehaviour
             opponentText.text = storyData.GetSpeakerText(linesDisplayed);
             opponentName.text = storyData.GetCurrentSpeaker(linesDisplayed);
             opponentAvatar.sprite = avatarsManager.GetSpeakerAvatar(opponentName.text);
-            opponentAvatar.rectTransform.localScale = new Vector3(-1 * Mathf.Abs(opponentAvatar.rectTransform.localScale.x), opponentAvatar.rectTransform.localScale.y, opponentAvatar.rectTransform.localScale.z);
         }
         linesDisplayed++;
     }
